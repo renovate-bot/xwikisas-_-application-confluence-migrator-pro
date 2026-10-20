@@ -54,6 +54,15 @@ Here are the SQL requests to run on the Confluence database to retrieve the CSV 
 Note that these requests are written for PostgreSQL. For other database engines, they might require adjustments.
 {{/warning}}
 
+You can also filter the calendars by the confluence space key by [[clicking here&gt;&gt;.||queryString="showSpaceFilter=true"]].
+
+{{velocity filter="none"}}
+#if ($request.showSpaceFilter == 'true')
+  #set($showSpaceFilter = true)
+#else
+  #set($showSpaceFilter = false)
+#end
+
 === For {{code language="none"}}parentCalendars.csv{{/code}} ===
 
 {{code language="sql"}}
@@ -68,6 +77,9 @@ SELECT t."ID"
 FROM confluence."AO_950DC3_TC_SUBCALS" t
 LEFT JOIN confluence."user_mapping" u ON t."CREATOR" = u."user_key"
 WHERE t."STORE_KEY" = 'com.atlassian.confluence.extra.calendar3.calendarstore.generic.GenericSubCalendarDataStore'
+#if ($showSpaceFilter)
+AND t."SPACE_KEY" = '&lt;The confluence space key to extract&gt;'
+#end
 -- needed because we can have multiple calendar with same name on the same space and we need to handle the conflict allways in the same way
 ORDER BY t."CREATED"
 {{/code}}
@@ -103,6 +115,9 @@ AND t."STORE_KEY" != 'com.atlassian.confluence.extra.calendar3.calendarstore.Int
 AND t."STORE_KEY" != 'AGILE_SPRINTS_SUB_CALENDAR_STORE'
 AND t."STORE_KEY" != 'JIRA_ISSUE_DATES_SUB_CALENDAR_STORE'
 AND t."STORE_KEY" != 'JIRA_PROJECT_RELEASES_SUB_CALENDAR_STORE'
+#if ($showSpaceFilter)
+AND t."SPACE_KEY" = '&lt;The confluence space key to extract&gt;'
+#end
 -- needed because we can have multiple calendar with same name on the same space and we need to handle the conflict allways in the same way
 ORDER BY t."CREATED"
 {{/code}}
@@ -124,6 +139,9 @@ The mapping between the calendar and the space provided by the table "AO_950DC3_
 SELECT t."SPACE_KEY"
      , t."SUB_CALENDAR_ID"
 FROM confluence."AO_950DC3_TC_SUBCALS_IN_SPACE" t
+#if ($showSpaceFilter)
+WHERE t."SPACE_KEY" = '&lt;The confluence space key to extract&gt;'
+#end
 {{/code}}
 
 So the resulting CSV should look like this:
@@ -156,6 +174,11 @@ SELECT t."ID"
      , t."VEVENT_UID"
 FROM confluence."AO_950DC3_TC_EVENTS" t
 LEFT JOIN confluence."user_mapping" u ON t."ORGANISER" = u."user_key"
+#if ($showSpaceFilter)
+JOIN confluence."AO_950DC3_TC_SUBCALS" c ON t."SUB_CALENDAR_ID" = c."ID"
+JOIN confluence."AO_950DC3_TC_SUBCALS" p ON c."PARENT_ID" = p."ID"
+WHERE p."SPACE_KEY" = '&lt;The confluence space key to extract&gt;'
+#end
 {{/code}}
 
 So the resulting CSV should look like this:
@@ -174,6 +197,12 @@ SELECT CASE WHEN (t."ALL_DAY") THEN 'TRUE' ELSE 'FALSE' END AS "ALL_DAY"
      , t."EVENT_ID"
      , t."EXCLUSION"
 FROM confluence."AO_950DC3_TC_EVENTS_EXCL" t
+#if ($showSpaceFilter)
+JOIN confluence."AO_950DC3_TC_EVENTS" e ON t."EVENT_ID" = e."ID"
+JOIN confluence."AO_950DC3_TC_SUBCALS" c ON e."SUB_CALENDAR_ID" = c."ID"
+JOIN confluence."AO_950DC3_TC_SUBCALS" p ON c."PARENT_ID" = p."ID"
+WHERE p."SPACE_KEY" = '&lt;The confluence space key to extract&gt;'
+#end
 {{/code}}
 
 So the resulting CSV should look like this:
@@ -192,6 +221,12 @@ SELECT t."EVENT_ID"
      , u."username"
 FROM confluence."AO_950DC3_TC_EVENTS_INVITEES" t
 JOIN confluence."user_mapping" u ON t."INVITEE_ID" = u."user_key"
+#if ($showSpaceFilter)
+JOIN confluence."AO_950DC3_TC_EVENTS" e ON t."EVENT_ID" = e."ID"
+JOIN confluence."AO_950DC3_TC_SUBCALS" c ON e."SUB_CALENDAR_ID" = c."ID"
+JOIN confluence."AO_950DC3_TC_SUBCALS" p ON c."PARENT_ID" = p."ID"
+WHERE p."SPACE_KEY" = '&lt;The confluence space key to extract&gt;'
+#end
 {{/code}}
 
 So the resulting CSV should look like this:
@@ -209,6 +244,11 @@ SELECT t."GROUP_NAME"
      , t."SUB_CALENDAR_ID"
      , t."TYPE"
 FROM confluence."AO_950DC3_TC_SUBCALS_PRIV_GRP" t
+#if ($showSpaceFilter)
+JOIN confluence."AO_950DC3_TC_SUBCALS" c ON t."SUB_CALENDAR_ID" = c."ID"
+JOIN confluence."AO_950DC3_TC_SUBCALS" p ON c."PARENT_ID" = p."ID"
+WHERE p."SPACE_KEY" = '&lt;The confluence space key to extract&gt;'
+#end
 {{/code}}
 
 So the resulting CSV should look like this:
@@ -227,7 +267,13 @@ SELECT t."SUB_CALENDAR_ID"
      , u."username"
 FROM confluence."AO_950DC3_TC_SUBCALS_PRIV_USR" t
 JOIN confluence."user_mapping" u ON t."USER_KEY" = u."user_key"
+#if ($showSpaceFilter)
+JOIN confluence."AO_950DC3_TC_SUBCALS" c ON t."SUB_CALENDAR_ID" = c."ID"
+JOIN confluence."AO_950DC3_TC_SUBCALS" p ON c."PARENT_ID" = p."ID"
+WHERE p."SPACE_KEY" = '&lt;The confluence space key to extract&gt;'
+#end
 {{/code}}
+{{/velocity}}
 
 So the resulting CSV should look like this:
 
