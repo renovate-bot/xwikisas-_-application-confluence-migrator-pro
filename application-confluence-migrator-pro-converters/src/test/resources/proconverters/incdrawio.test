@@ -39,9 +39,23 @@
               <string>content</string>
               <string>{{confluence_drawio zoom="1" custContentId="834994224" diagramDisplayName="asd" lbox="1" contentVer="1" baseUrl="https://xwikisas.atlassian.net/wiki" diagramName="asd" pCenter="0" aspect="372d61bb-91a3-237a-db62-2a2ef1b14e46 1" includedDiagram="1" width="1672" links="auto" diagramUrl="https://raw.githubusercontent.com/jgraph/drawio-diagrams/dev/examples/BPMN.xml" tbstyle="top" height="1084"/}}
 
-{{confluence_drawio simple="0" zoom="1" pageId="835846146" custContentId="836108309" diagramDisplayName="diagrama foarte speciala.drawio" lbox="1" hiResPreview="0" contentVer="1" revision="1" baseUrl="https://xwikisas.atlassian.net/wiki" diagramName="diagrama foarte speciala.drawio" pCenter="0" aspect="7kJMF9tJ1Ke4x1WTPXyw 1" width="261" links="auto" isUpload="1" tbstyle="top" height="191"/}}
+{{confluence_drawio zoom="1" custContentId="834994224" diagramDisplayName="di@gram" lbox="1" contentVer="1" baseUrl="https://xwikisas.atlassian.net/wiki" diagramName="di@gram" pCenter="0" aspect="372d61bb-91a3-237a-db62-2a2ef1b14e46 1" includedDiagram="1" width="1672" links="auto" tbstyle="top" height="1084"/}}
 
-{{confluence_drawio zoom="1" custContentId="835485726" diagramDisplayName="Untitled Diagram.drawio" lbox="1" contentVer="1" sFileId="1Brl3cjhnoD1iAL-zTCxe74rHKXtw6FlV" baseUrl="https://xwikisas.atlassian.net/wiki" diagramName="Untitled Diagram.drawio" pCenter="0" service="GDrive" aspect="7kJMF9tJ1Ke4x1WTPXyw 1" includedDiagram="1" width="261" links="auto" tbstyle="top" height="241"/}}</string>
+{{embedDiagram diagramSource="di\@gram.drawio" enableEdit="true"/}}
+
+{{embedDiagram diagramSource="MySpace.Page with a diagram.WebHome@diagrama foarte speciala.drawio" enableEdit="true"/}}
+
+{{embedDiagram diagramSource="MySpace.Page with a diagram.WebHome@diagrama fo\@rte speciala.drawio" enableEdit="true"/}}
+
+{{confluence_drawio simple="0" zoom="1" pageId="835846146" custContentId="836108309" diagramDisplayName="diagrama foarte speciala missing extension" lbox="1" hiResPreview="0" contentVer="1" revision="1" baseUrl="https://xwikisas.atlassian.net/wiki" diagramName="diagrama foarte speciala missing extension" pCenter="0" aspect="7kJMF9tJ1Ke4x1WTPXyw 1" width="261" links="auto" isUpload="1" tbstyle="top" height="191" originalDocumentRef="MySpace.Page with a diagram.WebHome"/}}
+
+{{confluence_drawio zoom="1" custContentId="835485726" diagramDisplayName="Untitled Diagram.drawio" lbox="1" contentVer="1" sFileId="1Brl3cjhnoD1iAL-zTCxe74rHKXtw6FlV" baseUrl="https://xwikisas.atlassian.net/wiki" diagramName="Untitled Diagram.drawio" pCenter="0" service="GDrive" aspect="7kJMF9tJ1Ke4x1WTPXyw 1" includedDiagram="1" width="261" links="auto" tbstyle="top" height="241"/}}
+
+{{confluence_drawio border="true" diagramName="Diagramwithoutextension" simpleViewer="false" links="auto" tbstyle="top" lbox="true" diagramWidth="1341" revision="8"/}}
+
+{{embedDiagram diagramSource="Diagramwithextension.drawio" enableEdit="true"/}}
+
+{{embedDiagram diagramSource="Diagramwithextension.diagram.xml" enableEdit="true"/}}</string>
             </entry>
             <entry>
               <string>syntax</string>
@@ -59,6 +73,61 @@
       </wikiDocumentRevision>
     </wikiDocumentLocale>
   </wikiDocument>
+  <wikiSpace name="Page with a diagram">
+    <wikiDocument name="WebHome">
+      <wikiDocumentLocale>
+        <p>
+          <parameters>
+            <entry>
+              <string>creation_author</string>
+              <string>XWiki.47826731</string>
+            </entry>
+            <entry>
+              <string>creation_date</string>
+              <date>2012-08-21 15:37:47.0 UTC</date>
+            </entry>
+            <entry>
+              <string>lastrevision</string>
+              <string>1</string>
+            </entry>
+          </parameters>
+        </p>
+        <wikiDocumentRevision revision="1">
+          <p>
+            <parameters>
+              <entry>
+                <string>revision_author</string>
+                <string>XWiki.47826731</string>
+              </entry>
+              <entry>
+                <string>revision_date</string>
+                <date>2016-10-11 14:47:37.0 UTC</date>
+              </entry>
+              <entry>
+                <string>title</string>
+                <string>Page with a diagram</string>
+              </entry>
+              <entry>
+                <string>content</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>syntax</string>
+                <org.xwiki.rendering.syntax.Syntax>
+                  <type>
+                    <name>XWiki</name>
+                    <id>xwiki</id>
+                    <variants class="empty-list"/>
+                  </type>
+                  <version>2.1</version>
+                </org.xwiki.rendering.syntax.Syntax>
+              </entry>
+            </parameters>
+          </p>
+        </wikiDocumentRevision>
+      </wikiDocumentLocale>
+    </wikiDocument>
+  </wikiSpace>
 </wikiSpace>
 .#------------------------------------------------------------------------------
 .input|confluence+xml

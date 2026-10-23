@@ -28,6 +28,28 @@
         </property>
         <collection name="attachments" class="java.util.Collection(com.atlassian.confluence.core.ContentEntityObject.attachments)"><element class="Attachment" package="com.atlassian.confluence.pages"><id name="id">134204920</id></element></collection>
     </object>
+    <object class="Page" package="com.atlassian.confluence.spaces">
+        <id name="id">835846146</id>
+        <property name="hibernateVersion">5</property>
+        <property name="title">Page with a diagram</property>
+        <property name="lowerTitle">page with a diagram</property>
+        <collection name="bodyContents" class="java.util.Collection"><element class="BodyContent" package="com.atlassian.confluence.core"><id name="id">42</id>
+        </element>
+        </collection>
+        <property name="version">1</property>
+        <property name="creator" class="ConfluenceUserImpl" package="com.atlassian.confluence.user"><id name="key"><![CDATA[01f7c1cc638e0d8c0163d05ca6f60124]]></id>
+        </property>
+        <property name="creationDate">2012-08-21 15:37:47.000</property>
+        <property name="lastModifier" class="ConfluenceUserImpl" package="com.atlassian.confluence.user"><id name="key"><![CDATA[01f7c1cc638e0d8c0163d05ca6f60124]]></id>
+        </property>
+        <property name="lastModificationDate">2016-10-11 14:47:37.000</property>
+        <property name="versionComment"><![CDATA[]]></property>
+        <property name="contentStatus"><![CDATA[current]]></property>
+        <collection name="labellings" class="java.util.Collection"></collection>
+        <property name="space" class="Space" package="com.atlassian.confluence.spaces"><id name="id">46268417</id>
+        </property>
+        <collection name="attachments" class="java.util.Collection(com.atlassian.confluence.core.ContentEntityObject.attachments)"><element class="Attachment" package="com.atlassian.confluence.pages"><id name="id">134204920</id></element></collection>
+    </object>
     <object class="Space" package="com.atlassian.confluence.spaces">
         <id name="id">46268417</id>
         <property name="name"><![CDATA[My Space]]></property>
@@ -46,8 +68,179 @@
     </object>
     <object class="BodyContent" package="com.atlassian.confluence.core">
         <id name="id">156868656</id>
-        <property name="body"><![CDATA[<ac:structured-macro ac:name="inc-drawio" ac:schema-version="1" data-layout="default" ac:local-id="495fc410-9f81-4f76-ad17-5ea2412d7c70" ac:macro-id="fdc323e8-dbea-416e-a662-4abf221c80f7"><ac:parameter ac:name="zoom">1</ac:parameter><ac:parameter ac:name="custContentId">834994224</ac:parameter><ac:parameter ac:name="diagramDisplayName">asd</ac:parameter><ac:parameter ac:name="lbox">1</ac:parameter><ac:parameter ac:name="contentVer">1</ac:parameter><ac:parameter ac:name="baseUrl">https://xwikisas.atlassian.net/wiki</ac:parameter><ac:parameter ac:name="diagramName">asd</ac:parameter><ac:parameter ac:name="pCenter">0</ac:parameter><ac:parameter ac:name="aspect">372d61bb-91a3-237a-db62-2a2ef1b14e46 1</ac:parameter><ac:parameter ac:name="includedDiagram">1</ac:parameter><ac:parameter ac:name="width">1672</ac:parameter><ac:parameter ac:name="links">auto</ac:parameter><ac:parameter ac:name="diagramUrl">https://raw.githubusercontent.com/jgraph/drawio-diagrams/dev/examples/BPMN.xml</ac:parameter><ac:parameter ac:name="tbstyle">top</ac:parameter><ac:parameter ac:name="height">1084</ac:parameter></ac:structured-macro><ac:structured-macro ac:name="inc-drawio" ac:schema-version="1" data-layout="default" ac:local-id="cac99f23-27a2-4c9c-a235-2787af16f768" ac:macro-id="8c88332b-2a43-4b93-b9ec-ce000188a1b7"><ac:parameter ac:name="simple">0</ac:parameter><ac:parameter ac:name="zoom">1</ac:parameter><ac:parameter ac:name="pageId">835846146</ac:parameter><ac:parameter ac:name="custContentId">836108309</ac:parameter><ac:parameter ac:name="diagramDisplayName">diagrama foarte speciala.drawio</ac:parameter><ac:parameter ac:name="lbox">1</ac:parameter><ac:parameter ac:name="hiResPreview">0</ac:parameter><ac:parameter ac:name="contentVer">1</ac:parameter><ac:parameter ac:name="revision">1</ac:parameter><ac:parameter ac:name="baseUrl">https://xwikisas.atlassian.net/wiki</ac:parameter><ac:parameter ac:name="diagramName">diagrama foarte speciala.drawio</ac:parameter><ac:parameter ac:name="pCenter">0</ac:parameter><ac:parameter ac:name="aspect">7kJMF9tJ1Ke4x1WTPXyw 1</ac:parameter><ac:parameter ac:name="width">261</ac:parameter><ac:parameter ac:name="links">auto</ac:parameter><ac:parameter ac:name="isUpload">1</ac:parameter><ac:parameter ac:name="tbstyle">top</ac:parameter><ac:parameter ac:name="height">191</ac:parameter></ac:structured-macro><ac:structured-macro ac:name="inc-drawio" ac:schema-version="1" data-layout="default" ac:local-id="8b8c4e5f-1245-4588-afc4-83c7ea4e133d" ac:macro-id="7106e08d-35d8-447a-ab6c-a0d10bb20b1e"><ac:parameter ac:name="zoom">1</ac:parameter><ac:parameter ac:name="custContentId">835485726</ac:parameter><ac:parameter ac:name="diagramDisplayName">Untitled Diagram.drawio</ac:parameter><ac:parameter ac:name="lbox">1</ac:parameter><ac:parameter ac:name="contentVer">1</ac:parameter><ac:parameter ac:name="sFileId">1Brl3cjhnoD1iAL-zTCxe74rHKXtw6FlV</ac:parameter><ac:parameter ac:name="baseUrl">https://xwikisas.atlassian.net/wiki</ac:parameter><ac:parameter ac:name="diagramName">Untitled Diagram.drawio</ac:parameter><ac:parameter ac:name="pCenter">0</ac:parameter><ac:parameter ac:name="service">GDrive</ac:parameter><ac:parameter ac:name="aspect">7kJMF9tJ1Ke4x1WTPXyw 1</ac:parameter><ac:parameter ac:name="includedDiagram">1</ac:parameter><ac:parameter ac:name="width">261</ac:parameter><ac:parameter ac:name="links">auto</ac:parameter><ac:parameter ac:name="tbstyle">top</ac:parameter><ac:parameter ac:name="height">241</ac:parameter></ac:structured-macro>]]></property>
+        <property name="body"><![CDATA[
+<ac:structured-macro ac:name="inc-drawio" ac:schema-version="1" data-layout="default" ac:local-id="495fc410-9f81-4f76-ad17-5ea2412d7c70" ac:macro-id="fdc323e8-dbea-416e-a662-4abf221c80f7">
+    <ac:parameter ac:name="zoom">1</ac:parameter>
+    <ac:parameter ac:name="custContentId">834994224</ac:parameter>
+    <ac:parameter ac:name="diagramDisplayName">asd</ac:parameter>
+    <ac:parameter ac:name="lbox">1</ac:parameter>
+    <ac:parameter ac:name="contentVer">1</ac:parameter>
+    <ac:parameter ac:name="baseUrl">https://xwikisas.atlassian.net/wiki</ac:parameter>
+    <ac:parameter ac:name="diagramName">asd</ac:parameter>
+    <ac:parameter ac:name="pCenter">0</ac:parameter>
+    <ac:parameter ac:name="aspect">372d61bb-91a3-237a-db62-2a2ef1b14e46 1</ac:parameter>
+    <ac:parameter ac:name="includedDiagram">1</ac:parameter>
+    <ac:parameter ac:name="width">1672</ac:parameter>
+    <ac:parameter ac:name="links">auto</ac:parameter>
+    <ac:parameter ac:name="diagramUrl">https://raw.githubusercontent.com/jgraph/drawio-diagrams/dev/examples/BPMN.xml</ac:parameter>
+    <ac:parameter ac:name="tbstyle">top</ac:parameter>
+    <ac:parameter ac:name="height">1084</ac:parameter>
+</ac:structured-macro>
+<ac:structured-macro ac:name="inc-drawio" ac:schema-version="1" data-layout="default" ac:local-id="495fc410-9f81-4f76-ad17-5ea2412d7c70" ac:macro-id="fdc323e8-dbea-416e-a662-4abf221c80f7">
+    <ac:parameter ac:name="zoom">1</ac:parameter>
+    <ac:parameter ac:name="custContentId">834994224</ac:parameter>
+    <ac:parameter ac:name="diagramDisplayName">di@gram</ac:parameter>
+    <ac:parameter ac:name="lbox">1</ac:parameter>
+    <ac:parameter ac:name="contentVer">1</ac:parameter>
+    <ac:parameter ac:name="baseUrl">https://xwikisas.atlassian.net/wiki</ac:parameter>
+    <ac:parameter ac:name="diagramName">di@gram</ac:parameter>
+    <ac:parameter ac:name="pCenter">0</ac:parameter>
+    <ac:parameter ac:name="aspect">372d61bb-91a3-237a-db62-2a2ef1b14e46 1</ac:parameter>
+    <ac:parameter ac:name="includedDiagram">1</ac:parameter>
+    <ac:parameter ac:name="width">1672</ac:parameter>
+    <ac:parameter ac:name="links">auto</ac:parameter>
+    <ac:parameter ac:name="tbstyle">top</ac:parameter>
+    <ac:parameter ac:name="height">1084</ac:parameter>
+</ac:structured-macro>
+<ac:structured-macro ac:name="inc-drawio" ac:schema-version="1" data-layout="default" ac:local-id="495fc410-9f81-4f76-ad17-5ea2412d7c70" ac:macro-id="fdc323e8-dbea-416e-a662-4abf221c80f7">
+    <ac:parameter ac:name="zoom">1</ac:parameter>
+    <ac:parameter ac:name="custContentId">834994224</ac:parameter>
+    <ac:parameter ac:name="diagramDisplayName">di@gram.drawio</ac:parameter>
+    <ac:parameter ac:name="lbox">1</ac:parameter>
+    <ac:parameter ac:name="contentVer">1</ac:parameter>
+    <ac:parameter ac:name="baseUrl">https://xwikisas.atlassian.net/wiki</ac:parameter>
+    <ac:parameter ac:name="diagramName">di@gram.drawio</ac:parameter>
+    <ac:parameter ac:name="pCenter">0</ac:parameter>
+    <ac:parameter ac:name="aspect">372d61bb-91a3-237a-db62-2a2ef1b14e46 1</ac:parameter>
+    <ac:parameter ac:name="includedDiagram">1</ac:parameter>
+    <ac:parameter ac:name="width">1672</ac:parameter>
+    <ac:parameter ac:name="links">auto</ac:parameter>
+    <ac:parameter ac:name="tbstyle">top</ac:parameter>
+    <ac:parameter ac:name="height">1084</ac:parameter>
+</ac:structured-macro>
+<ac:structured-macro ac:name="inc-drawio" ac:schema-version="1" data-layout="default" ac:local-id="cac99f23-27a2-4c9c-a235-2787af16f768" ac:macro-id="8c88332b-2a43-4b93-b9ec-ce000188a1b7">
+    <ac:parameter ac:name="simple">0</ac:parameter>
+    <ac:parameter ac:name="zoom">1</ac:parameter>
+    <ac:parameter ac:name="pageId">835846146</ac:parameter>
+    <ac:parameter ac:name="custContentId">836108309</ac:parameter>
+    <ac:parameter ac:name="diagramDisplayName">diagrama foarte speciala.drawio</ac:parameter>
+    <ac:parameter ac:name="lbox">1</ac:parameter>
+    <ac:parameter ac:name="hiResPreview">0</ac:parameter>
+    <ac:parameter ac:name="contentVer">1</ac:parameter>
+    <ac:parameter ac:name="revision">1</ac:parameter>
+    <ac:parameter ac:name="baseUrl">https://xwikisas.atlassian.net/wiki</ac:parameter>
+    <ac:parameter ac:name="diagramName">diagrama foarte speciala.drawio</ac:parameter>
+    <ac:parameter ac:name="pCenter">0</ac:parameter>
+    <ac:parameter ac:name="aspect">7kJMF9tJ1Ke4x1WTPXyw 1</ac:parameter>
+    <ac:parameter ac:name="width">261</ac:parameter>
+    <ac:parameter ac:name="links">auto</ac:parameter>
+    <ac:parameter ac:name="isUpload">1</ac:parameter>
+    <ac:parameter ac:name="tbstyle">top</ac:parameter>
+    <ac:parameter ac:name="height">191</ac:parameter>
+</ac:structured-macro>
+<ac:structured-macro ac:name="inc-drawio" ac:schema-version="1" data-layout="default" ac:local-id="cac99f23-27a2-4c9c-a235-2787af16f768" ac:macro-id="8c88332b-2a43-4b93-b9ec-ce000188a1b7">
+    <ac:parameter ac:name="simple">0</ac:parameter>
+    <ac:parameter ac:name="zoom">1</ac:parameter>
+    <ac:parameter ac:name="pageId">835846146</ac:parameter>
+    <ac:parameter ac:name="custContentId">836108309</ac:parameter>
+    <ac:parameter ac:name="diagramDisplayName">diagrama fo@rte speciala.drawio</ac:parameter>
+    <ac:parameter ac:name="lbox">1</ac:parameter>
+    <ac:parameter ac:name="hiResPreview">0</ac:parameter>
+    <ac:parameter ac:name="contentVer">1</ac:parameter>
+    <ac:parameter ac:name="revision">1</ac:parameter>
+    <ac:parameter ac:name="baseUrl">https://xwikisas.atlassian.net/wiki</ac:parameter>
+    <ac:parameter ac:name="diagramName">diagrama fo@rte speciala.drawio</ac:parameter>
+    <ac:parameter ac:name="pCenter">0</ac:parameter>
+    <ac:parameter ac:name="aspect">7kJMF9tJ1Ke4x1WTPXyw 1</ac:parameter>
+    <ac:parameter ac:name="width">261</ac:parameter>
+    <ac:parameter ac:name="links">auto</ac:parameter>
+    <ac:parameter ac:name="isUpload">1</ac:parameter>
+    <ac:parameter ac:name="tbstyle">top</ac:parameter>
+    <ac:parameter ac:name="height">191</ac:parameter>
+</ac:structured-macro>
+<ac:structured-macro ac:name="inc-drawio" ac:schema-version="1" data-layout="default" ac:local-id="cac99f23-27a2-4c9c-a235-2787af16f768" ac:macro-id="8c88332b-2a43-4b93-b9ec-ce000188a1b7">
+    <ac:parameter ac:name="simple">0</ac:parameter>
+    <ac:parameter ac:name="zoom">1</ac:parameter>
+    <ac:parameter ac:name="pageId">835846146</ac:parameter>
+    <ac:parameter ac:name="custContentId">836108309</ac:parameter>
+    <ac:parameter ac:name="diagramDisplayName">diagrama foarte speciala missing extension</ac:parameter>
+    <ac:parameter ac:name="lbox">1</ac:parameter>
+    <ac:parameter ac:name="hiResPreview">0</ac:parameter>
+    <ac:parameter ac:name="contentVer">1</ac:parameter>
+    <ac:parameter ac:name="revision">1</ac:parameter>
+    <ac:parameter ac:name="baseUrl">https://xwikisas.atlassian.net/wiki</ac:parameter>
+    <ac:parameter ac:name="diagramName">diagrama foarte speciala missing extension</ac:parameter>
+    <ac:parameter ac:name="pCenter">0</ac:parameter>
+    <ac:parameter ac:name="aspect">7kJMF9tJ1Ke4x1WTPXyw 1</ac:parameter>
+    <ac:parameter ac:name="width">261</ac:parameter>
+    <ac:parameter ac:name="links">auto</ac:parameter>
+    <ac:parameter ac:name="isUpload">1</ac:parameter>
+    <ac:parameter ac:name="tbstyle">top</ac:parameter>
+    <ac:parameter ac:name="height">191</ac:parameter>
+</ac:structured-macro>
+<ac:structured-macro ac:name="inc-drawio" ac:schema-version="1" data-layout="default" ac:local-id="8b8c4e5f-1245-4588-afc4-83c7ea4e133d" ac:macro-id="7106e08d-35d8-447a-ab6c-a0d10bb20b1e">
+    <ac:parameter ac:name="zoom">1</ac:parameter>
+    <ac:parameter ac:name="custContentId">835485726</ac:parameter>
+    <ac:parameter ac:name="diagramDisplayName">Untitled Diagram.drawio</ac:parameter>
+    <ac:parameter ac:name="lbox">1</ac:parameter>
+    <ac:parameter ac:name="contentVer">1</ac:parameter>
+    <ac:parameter ac:name="sFileId">1Brl3cjhnoD1iAL-zTCxe74rHKXtw6FlV</ac:parameter>
+    <ac:parameter ac:name="baseUrl">https://xwikisas.atlassian.net/wiki</ac:parameter>
+    <ac:parameter ac:name="diagramName">Untitled Diagram.drawio</ac:parameter>
+    <ac:parameter ac:name="pCenter">0</ac:parameter>
+    <ac:parameter ac:name="service">GDrive</ac:parameter>
+    <ac:parameter ac:name="aspect">7kJMF9tJ1Ke4x1WTPXyw 1</ac:parameter>
+    <ac:parameter ac:name="includedDiagram">1</ac:parameter>
+    <ac:parameter ac:name="width">261</ac:parameter>
+    <ac:parameter ac:name="links">auto</ac:parameter>
+    <ac:parameter ac:name="tbstyle">top</ac:parameter>
+    <ac:parameter ac:name="height">241</ac:parameter>
+</ac:structured-macro>
+<ac:structured-macro ac:name="drawio" ac:schema-version="1" ac:macro-id="7338db1e-7709-47b8-abab-c6bdea24c4f4">
+    <ac:parameter ac:name="border">true</ac:parameter>
+    <ac:parameter ac:name="diagramName">Diagramwithoutextension</ac:parameter>
+    <ac:parameter ac:name="simpleViewer">false</ac:parameter>
+    <ac:parameter ac:name="width" />
+    <ac:parameter ac:name="links">auto</ac:parameter>
+    <ac:parameter ac:name="tbstyle">top</ac:parameter>
+    <ac:parameter ac:name="lbox">true</ac:parameter>
+    <ac:parameter ac:name="diagramWidth">1341</ac:parameter>
+    <ac:parameter ac:name="revision">8</ac:parameter>
+    <ac:parameter ac:name="" />
+</ac:structured-macro>
+<ac:structured-macro ac:name="drawio" ac:schema-version="1" ac:macro-id="7338db1e-7709-47b8-abab-c6bdea24c4f4">
+    <ac:parameter ac:name="border">true</ac:parameter>
+    <ac:parameter ac:name="diagramName">Diagramwithextension.drawio</ac:parameter>
+    <ac:parameter ac:name="simpleViewer">false</ac:parameter>
+    <ac:parameter ac:name="width" />
+    <ac:parameter ac:name="links">auto</ac:parameter>
+    <ac:parameter ac:name="tbstyle">top</ac:parameter>
+    <ac:parameter ac:name="lbox">true</ac:parameter>
+    <ac:parameter ac:name="diagramWidth">1341</ac:parameter>
+    <ac:parameter ac:name="revision">8</ac:parameter>
+    <ac:parameter ac:name="" />
+</ac:structured-macro>
+<ac:structured-macro ac:name="drawio" ac:schema-version="1" ac:macro-id="7338db1e-7709-47b8-abab-c6bdea24c4f4">
+    <ac:parameter ac:name="border">true</ac:parameter>
+    <ac:parameter ac:name="diagramName">Diagramwithextension.diagram.xml</ac:parameter>
+    <ac:parameter ac:name="simpleViewer">false</ac:parameter>
+    <ac:parameter ac:name="width" />
+    <ac:parameter ac:name="links">auto</ac:parameter>
+    <ac:parameter ac:name="tbstyle">top</ac:parameter>
+    <ac:parameter ac:name="lbox">true</ac:parameter>
+    <ac:parameter ac:name="diagramWidth">1341</ac:parameter>
+    <ac:parameter ac:name="revision">8</ac:parameter>
+    <ac:parameter ac:name="" />
+</ac:structured-macro>
+]]>
+</property>
         <property name="content" class="Page" package="com.atlassian.confluence.pages"><id name="id">45809845</id></property>
+        <property name="bodyType">2</property>
+    </object>
+    <object class="BodyContent" package="com.atlassian.confluence.core">
+        <id name="id">42</id>
+        <property name="body"/>
+        <property name="content" class="Page" package="com.atlassian.confluence.pages"><id name="id">835846146</id></property>
         <property name="bodyType">2</property>
     </object>
 </hibernate-generic>
