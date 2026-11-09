@@ -397,7 +397,12 @@
 #cfmHowToMigrateServerCollapse,
 #cfmHowToMigrateBatchesCollapse {
   margin-top: 1em;
-}</code>
+}
+
+#confluencePackages .action.collaboraEdit {
+  display: none !important
+}
+</code>
     </property>
     <property>
       <contentType>LESS</contentType>
