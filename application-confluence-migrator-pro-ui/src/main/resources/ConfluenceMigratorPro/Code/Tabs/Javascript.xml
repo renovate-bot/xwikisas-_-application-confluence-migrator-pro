@@ -133,23 +133,24 @@
 });
 
 require(['jquery', 'xwiki-l10n!confluenceMigratorPro'], function ($, l10n) {
-
   $('#confluence-pro-tab-root li').on('click', function () {
-    let currentElement = $(this);
-    // If the container already exist just display it, otherwise lazy load the content when the user clicks on the tab.
-    let contentContainer = $(`.${currentElement.data('contentContainer')}`);
-    if (contentContainer.length != 0) {
-      hideSections();
-      contentContainer.removeClass('hidden');
-    }
-    else {
-      let pageReference = currentElement.data('pageReference');
-      lazyLoad(currentElement.data('contentContainer'), pageReference);
-    }
+    const currentElement = $(this);
+    switchTo(currentElement.data('contentContainer'), currentElement.data('pageReference'));
   });
 
+  function switchTo(className, pageReference) {
+    // If the container already exist just display it, otherwise lazy load the content when the user clicks on the tab.
+    const contentContainer = $(`.${className}`);
+    if (contentContainer.length) {
+      hideSections();
+      contentContainer.removeClass('hidden');
+    } else {
+      lazyLoad(className, pageReference);
+    }
+  }
+
   function lazyLoad(containerClass, pageReference) {
-    let URL = new XWiki.Document(XWiki.Model.resolve(pageReference, XWiki.EntityType.DOCUMENT)).getURL('get');
+    const URL = new XWiki.Document(XWiki.Model.resolve(pageReference, XWiki.EntityType.DOCUMENT)).getURL('get');
     hideSections();
     $('.confluence-pro-section-containers').addClass('loading');
     $.get(URL)
@@ -170,8 +171,8 @@ require(['jquery', 'xwiki-l10n!confluenceMigratorPro'], function ($, l10n) {
     })
   }
 
-  $(document).ready(function(){
-    lazyLoad('confluence-pro-tab-container-new-migration','ConfluenceMigratorPro.Code.Tabs.NewMigration');
+  $(() =&gt; {
+    switchTo('confluence-pro-tab-container-new-migration','ConfluenceMigratorPro.Code.Tabs.NewMigration');
   });
 });
 

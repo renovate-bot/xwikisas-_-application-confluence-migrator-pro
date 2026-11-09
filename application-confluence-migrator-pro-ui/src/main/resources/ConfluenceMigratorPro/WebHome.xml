@@ -64,7 +64,7 @@
 #if (!$services.licensing.licensor.hasLicensureForEntity($mainReference))
   {{missingLicenseMessage extensionName="confluencepro.extension.name"/}}
 #else
-  {{html}}
+  {{html clean=false}}
   &lt;div class="floatcontainer" id="confluence-pro-tab-root"&gt;
     &lt;ul class="xwikitabbar"&gt;
       &lt;li class="active" data-content-container="confluence-pro-tab-container-new-migration" data-page-reference="ConfluenceMigratorPro.Code.Tabs.NewMigration"&gt;
@@ -93,7 +93,15 @@
         &lt;/a&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
-    &lt;div class='confluence-pro-section-containers'&gt;&lt;/div&gt;
+    &lt;div class='confluence-pro-section-containers'&gt;
+      &lt;div class="confluence-pro-tab-container-new-migration"&gt;
+  {{/html}}
+
+  {{include reference="ConfluenceMigratorPro.Code.Tabs.NewMigration"/}}
+
+  {{html clean="false"}}
+      &lt;/div&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
   {{/html}}
 #end
