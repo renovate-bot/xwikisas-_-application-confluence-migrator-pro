@@ -485,8 +485,7 @@
   ],
 });
 
-require(['jquery', 'xwiki-l10n!confluencemigratorpro.javascript'], function ($, l10n) {
-
+require(['jquery', 'xwiki-l10n!confluencemigratorpro.javascript'].concat(XWiki.FileUploader ? [] : ['xwiki-upload']), ($, l10n, FileUploader) =&gt; {
   $(document).on("change", ".specified-migration", function () {
     let parent = $(this).closest(".migrationSettings");
     if (this.value) {
@@ -499,9 +498,10 @@ require(['jquery', 'xwiki-l10n!confluencemigratorpro.javascript'], function ($, 
   $(function() {
     const input = document.querySelector('#confluenceUploadFile');
 
-    if (!input || !XWiki.FileUploader) return;
+    if (!input) return;
 
-    new XWiki.FileUploader(input, {
+    const uploader = FileUploader || XWiki.FileUploader;
+    new uploader(input, {
       progressAutohide: true,
       responseContainer: document.createElement('div'),
     });
