@@ -479,7 +479,7 @@ $xwiki.ssfx.use('uicomponents/widgets/upload.css', true)
 #if ($isPackageStore &amp;&amp; $services.security.authorization.hasAccess('admin', $xcontext.user) &amp;&amp; $attachment.getFilename().contains(".json"))
 &lt;a class="action" href="$xwiki.getURL("ConfluenceMigratorPro.Metadata.Migrations.Migration$datetool.getSystemTime()", 'edit', "sheet=ConfluenceMigratorPro.Metadata.Code.MigrationSheet&amp;package=$services.model.serialize($attachment.getReference())")"&gt;
   &lt;span class="action-icon"&gt;$services.icon.renderHTML('play')&lt;/span&gt;&lt;span
-    class="action-label"&gt;$services.rendering.escape($services.localization.render('confluencepro.migration.livetable._actions.select'), $xwiki.currentContentSyntaxId)
+    class="action-label"&gt;$escapetool.xml($services.localization.render('confluencepro.migration.livetable._actions.select'))
   &lt;/span&gt;
 &lt;/a&gt;
 #end
