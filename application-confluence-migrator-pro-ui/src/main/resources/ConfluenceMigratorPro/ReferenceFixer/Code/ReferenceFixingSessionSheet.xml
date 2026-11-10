@@ -75,9 +75,9 @@
         {{/html}}
 
         #if ("$!request.showLogs" == "1")
-        [[Hide logs&gt;&gt;||queryString="showLogs=0"]]
+        [[{{translation key="confluencemigratorpro.postMigrationFixes.hidelogs"/}}&gt;&gt;||queryString="showLogs=0"]]
         #else
-        [[Display logs&gt;&gt;||queryString="showLogs=1"]]
+        [[{{translation key="confluencemigratorpro.postMigrationFixes.showlogs"/}}&gt;&gt;||queryString="showLogs=1"]]
         #end
     #end
     #if (!$finished || "$!request.showLogs" == "1")
@@ -109,8 +109,8 @@
     {{html}}
         &lt;div style="float:right;padding-left:1em"&gt;
             &lt;form method="post" action="?"&gt;
-                &lt;button name="dryRun" class="btn btn-primary" value="1"&gt;Dry run&lt;/button&gt;
-                &lt;button name="run" class="btn btn-danger" value="1"&gt;Run&lt;/button&gt;
+                &lt;button name="dryRun" class="btn btn-primary" value="1"&gt;$escapetool.xml($services.localization.render('confluencemigratorpro.postMigrationFixes.dryRun'))&lt;/button&gt;
+                &lt;button name="run" class="btn btn-danger" value="1"&gt;$escapetool.xml($services.localization.render('confluencemigratorpro.postMigrationFixes.run'))&lt;/button&gt;
             &lt;/form&gt;
         &lt;/div&gt;
     {{/html}}
@@ -132,34 +132,28 @@
 #elseif ("$!obj.getValue('executed')" == "")
     #if (!$doc.isNew())
         {{info}}
-        This reference fixing session has not run yet.
+        {{translation key="confluencepro.referencefixer.hasnotrunyet"/}}
         {{/info}}
     #end
 #else
     #maybeShowJob
-    #if ("$obj.getValue('executed')" == "2" &amp;&amp; !$jobStatus)
+    #if ("$obj.getValue('executed')" == "3" || ("$obj.getValue('executed')" == "2" &amp;&amp; !$jobStatus))
 
         {{error}}
-        This reference fixing session failed.
+        {{translation key="confluencepro.referencefixer.failed"/}}
         {{/error}}
 
     #elseif ("$obj.getValue('executed')" == "2" &amp;&amp; $jobStatus)
 
         {{info}}
-        This reference fixing session is running.
+        {{translation key="confluencepro.referencefixer.running"/}}
         {{/info}}
 
     #elseif ("$obj.getValue('executed')" == "1")
 
         {{info}}
-        This reference fixing session is done.
+        {{translation key="confluencepro.referencefixer.done"/}}
         {{/info}}
-
-    #elseif ("$obj.getValue('executed')" == "3")
-
-        {{error}}
-        This reference fixing session failed.
-        {{/error}}
 
     #end
 #end
@@ -175,34 +169,29 @@
         #if (!($xcontext.action == "edit" &amp;&amp; $property.name == "dryRun") &amp;&amp; $property.name != "executed")
             &lt;dt&gt;
                 &lt;label for="ConfluenceMigratorPro.ReferenceFixer.Code.ReferenceFixingSessionClass_0_$property.name"&gt;
-                  $property.prettyName
-                  &lt;span class="xHint"&gt;$property.hint&lt;/span&gt;
+                  $escapetool.xml($property.prettyName)
+                  &lt;span class="xHint"&gt;$escapetool.xml($property.hint)&lt;/span&gt;
                 &lt;/label&gt;
             &lt;/dt&gt;
             &lt;dd&gt;
-            {{/html}}
-
-            $doc.display($property.getName())
-
-            {{html clean=false}}
+            {{/html}}$doc.display($property.getName()){{html clean=false}}
            &lt;/dd&gt;
         #end
     #end
     &lt;/dl&gt;
 &lt;/div&gt;
 {{/html}}
-
 #set ($stats = $doc.getAttachment("stats.json").getContentAsString())
 #if ($stats)
     #set ($stats = $jsontool.fromString($stats))
 
-    == Statistics
+    == {{translation key="confluencemigratorpro.postMigrationFixes.stats"/}}
 
-    * Unchanged documents: $stats['unchangedDocs']
-    * Changed documents: $stats['successfulDocs']
-    * Failed documents: $stats['failedDocs']
-    * Successful reference conversions: $stats['successfulRefs']
-    * Failed reference conversions: $stats['failedRefs']
+    * {{translation key="confluencemigratorpro.postMigrationFixes.unchangeddocs"//}} $stats['unchangedDocs']
+    * {{translation key="confluencemigratorpro.postMigrationFixes.changeddocs"//}} $stats['successfulDocs']
+    * {{translation key="confluencemigratorpro.postMigrationFixes.faileddocs"//}} $stats['failedDocs']
+    * {{translation key="confluencepro.referencefixer.successfulconvs"/}} $stats['successfulRefs']
+    * {{translation key="confluencepro.referencefixer.failedconvs"/}} $stats['failedRefs']
 #end
 {{/velocity}}</content>
 </xwikidoc>

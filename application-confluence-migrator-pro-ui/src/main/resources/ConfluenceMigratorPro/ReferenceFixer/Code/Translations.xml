@@ -45,6 +45,13 @@ confluencepro.referencefixer.livedata.executed=Execution status
 confluencepro.referencefixer.livedata.doc.name=Name
 confluencepro.referencefixer.livedata.doc.creationDate=Created
 confluencepro.referencefixer.livedata.doc.date=Updated
+confluencepro.referencefixer.create=Create a reference fixing session
+confluencepro.referencefixer.hasnotrunyet=This reference fixing session has not run yet.
+confluencepro.referencefixer.failed=This reference fixing session failed.
+confluencepro.referencefixer.running=This reference fixing session is running.
+confluencepro.referencefixer.done=This reference fixing session is done.
+confluencepro.referencefixer.successfulconvs=Successful reference conversions:
+confluencepro.referencefixer.failedconvs=Failed reference conversions:
 </content>
   <object>
     <name>ConfluenceMigratorPro.ReferenceFixer.Code.Translations</name>

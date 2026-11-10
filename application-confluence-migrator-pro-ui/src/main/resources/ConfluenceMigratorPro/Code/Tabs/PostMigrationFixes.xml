@@ -46,45 +46,49 @@
 {{velocity}}
 
 {{html}}
-#displaySubtitle('cube', 'Broken links and missing Confluence reference', '', {})
+#displaySubtitle('cube', $services.localization.render('confluencemigratorpro.homepage.tab.postMigrationFixes.referencefixer.title'), '', {})
 {{/html}}
 
-[[Manage broken links and missing Confluence references&gt;&gt;ConfluenceMigratorPro.ReferenceFixer.WebHome||class="btn btn-primary"]]
+[[{{translation key="confluencemigratorpro.homepage.tab.postMigrationFixes.referencefixer.manage"/}}&gt;&gt;ConfluenceMigratorPro.ReferenceFixer.WebHome||class="btn btn-primary"]]
 
 {{html}}
-#displaySubtitle('cube', 'Link Mapping State', '', {})
+#displaySubtitle('cube', $services.localization.render('confluencemigratorpro.homepage.tab.postMigrationFixes.linkmapping.state.title'), '', {})
 {{/html}}
 
-When using the "Only link mapping" parameter, or when disabling the "Store Confluence details" parameter, Confluence Migrator Pro stores link mapping data in order to produce correct links when importing pages linking to pages from spaces that have not been migrated yet.
+{{translation key="confluencemigratorpro.homepage.tab.postMigrationFixes.linkmapping.description"/}}
 #set ($linkMappingStore = $services.component.getInstance("com.xwiki.pro.internal.resolvers.LinkMappingStore"))
-#set ($confirmtext = "I know what I am doing")
+#set ($confirmtext = $services.localization.render('confluencemigratorpro.homepage.tab.postMigrationFixes.linkmapping.iknowwhatiamdoing'))
 #if ($request.emptylm)
   #if ($request.emptylm == $confirmtext)
      #set ($discard = $linkMappingStore.empty())
 
      {{info}}
-     The link mapping state has been emptied.
+     {{translation key="confluencemigratorpro.homepage.tab.postMigrationFixes.linkmapping.emptied"/}}
      {{/info}}
 
   #else
 
     {{error}}
-    To empty the link mapping, please confirm by typing "$confirmtext".
+    $services.rendering.escape($services.localization.render('confluencemigratorpro.homepage.tab.postMigrationFixes.linkmapping.emptyconfirmerror', [$confirmtext]), 'xwiki/2.1')
     {{/error}}
 
   #end
 #end
 #set ($linkMappingCount = $linkMappingStore.getEntryCount())
 
-There are **$linkMappingCount** link mapping entries.
+
+{{translation key="confluencemigratorpro.homepage.tab.postMigrationFixes.linkmapping.count" parameters="$services.rendering.escape("**" + "$linkMappingCount" + "**", "xwiki/2.1")"/}}
 
 #if ($linkMappingCount &gt; 0)
 
 {{html}}
-&lt;form method="post"&gt;
+&lt;form method="post" action="$xwiki.getURL("ConfluenceMigratorPro.Code.Tabs.PostMigrationFixes")"&gt;
   &lt;p&gt;
-    &lt;button class="btn btn-danger"&gt;Empty Link Mapping&lt;/button&gt;&lt;label&gt;
-    &amp;nbsp;Confirm by typing "$confirmtext": &lt;input type="text" name="emptylm" autocomplete="off"/&gt;&lt;/label&gt;
+    &lt;button class="btn btn-danger"&gt;$escapetool.xml($services.localization.render('confluencemigratorpro.homepage.tab.postMigrationFixes.linkmapping.empty'))&lt;/button&gt; ##
+    &lt;label&gt;
+        $escapetool.xml($services.localization.render('confluencemigratorpro.homepage.tab.postMigrationFixes.linkmapping.emptyconfirminstruction', [$escapetool.xml($confirmtext)])) ##
+        &lt;input type="text" name="emptylm" autocomplete="off"/&gt;
+    &lt;/label&gt;
   &lt;/p&gt;
 &lt;/form&gt;
 {{/html}}

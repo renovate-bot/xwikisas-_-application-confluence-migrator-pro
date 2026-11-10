@@ -40,7 +40,7 @@
 
 {{velocity}}
 {{html}}
-#displayNewReferenceFixingSessionLink("Create a reference fixing session", $objectool.null)
+#displayNewReferenceFixingSessionLink($services.localization.render("confluencepro.referencefixer.create"), $objectool.null)
 {{/html}}
 {{/velocity}}
 

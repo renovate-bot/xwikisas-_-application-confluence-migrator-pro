@@ -49,7 +49,7 @@
   #if ($migrationReference)
     &lt;input type="hidden" name="migration" value="$services.model.serialize($migrationReference, 'default')"/&gt;
   #end
-  &lt;button class="btn btn-primary"&gt;$label&lt;/button&gt;
+  &lt;button class="btn btn-primary"&gt;$escapetool.xml($label)&lt;/button&gt;
 &lt;/form&gt;
 #end
 {{/velocity}}
