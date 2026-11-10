@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU Lesser General Public
  * License along with this software; if not, write to the Free
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
- * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+ * 02110-1301 USA, or see the FSF site: https://www.fsf.org.
 -->
 
 <xwikidoc version="1.5" reference="ConfluenceMigratorPro.Code.Translations" locale="ro">
@@ -195,6 +195,24 @@ confluencepro.zippicker.title=Selectați un pachet Confluence pentru a începe m
 ### Missing: confluencemigratorpro.homepage.tab.importedMacros.title=Imported macros
 ### Missing: confluencemigratorpro.homepage.tab.postMigrationFixes.title=Post migration fixes
 ### Missing: confluencemigratorpro.homepage.tab.otherTools.title=Other migration tools
+### Missing: confluencemigratorpro.homepage.tab.postMigrationFixes.referencefixer.title=Broken links and missing Confluence references
+### Missing: confluencemigratorpro.homepage.tab.postMigrationFixes.referencefixer.manage=Manage broken links and missing Confluence references
+### Missing: confluencemigratorpro.homepage.tab.postMigrationFixes.linkmapping.state.title=Link Mapping State
+### Missing: confluencemigratorpro.homepage.tab.postMigrationFixes.linkmapping.description=When using the "Only link mapping" parameter, or when disabling the "Store Confluence details" parameter, Confluence Migrator Pro stores link mapping data in order to produce correct links when importing pages linking to pages from spaces that have not been migrated yet.
+### Missing: confluencemigratorpro.homepage.tab.postMigrationFixes.linkmapping.iknowwhatiamdoing=I know what I am doing
+### Missing: confluencemigratorpro.homepage.tab.postMigrationFixes.linkmapping.emptyconfirmerror=To empty the link mapping, please confirm by typing "{0}".
+### Missing: confluencemigratorpro.homepage.tab.postMigrationFixes.linkmapping.emptyconfirminstruction=Confirm by typing "{0}":
+### Missing: confluencemigratorpro.homepage.tab.postMigrationFixes.linkmapping.emptied=The link mapping state has been emptied.
+### Missing: confluencemigratorpro.homepage.tab.postMigrationFixes.linkmapping.count=There are {0} link mapping entries.
+### Missing: confluencemigratorpro.homepage.tab.postMigrationFixes.linkmapping.empty=Empty Link Mapping
+### Missing: confluencemigratorpro.postMigrationFixes.hidelogs=Hide logs
+### Missing: confluencemigratorpro.postMigrationFixes.showlogs=Show logs
+### Missing: confluencemigratorpro.postMigrationFixes.dryRun=Dry run
+### Missing: confluencemigratorpro.postMigrationFixes.run=Run
+### Missing: confluencemigratorpro.postMigrationFixes.stats=Statistics
+### Missing: confluencemigratorpro.postMigrationFixes.unchangeddocs=Unchanged documents:
+### Missing: confluencemigratorpro.postMigrationFixes.changeddocs=Changed documents:
+### Missing: confluencemigratorpro.postMigrationFixes.faileddocs=Failed documents:
 ### Missing: confluencepro.howToMigrate.upload.title=Upload a Confluence export (or use an already uploaded one)
 ### Missing: confluencepro.howToMigrate.server.title=Select from your server a Confluence export
 ### Missing: confluencepro.uploadFacadeButton=Upload export

@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU Lesser General Public
  * License along with this software; if not, write to the Free
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
- * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+ * 02110-1301 USA, or see the FSF site: https://www.fsf.org.
 -->
 
 <xwikidoc version="1.5" reference="ConfluenceMigratorPro.ReferenceFixer.Code.Translations" locale="de">
@@ -39,11 +39,11 @@
   <content>### Missing: confluencepro.referencefixer.livedata.emptyvalue=
 confluencepro.referencefixer.livedata.dryRun=Trockenlauf
 ### Missing: confluencepro.referencefixer.livedata.updateInPlace=Update in place
-### Missing: confluencepro.referencefixer.livedata.migrations=Migrations
-### Missing: confluencepro.referencefixer.livedata.spaces=Spaces
-### Missing: confluencepro.referencefixer.livedata.executed=Execution status
-### Missing: confluencepro.referencefixer.livedata.doc.name=Name
-### Missing: confluencepro.referencefixer.livedata.doc.creationDate=Created
-### Missing: confluencepro.referencefixer.livedata.doc.date=Updated
+confluencepro.referencefixer.livedata.migrations=Migrations
+confluencepro.referencefixer.livedata.spaces=Spaces
+confluencepro.referencefixer.livedata.executed=Execution status
+confluencepro.referencefixer.livedata.doc.name=Name
+confluencepro.referencefixer.livedata.doc.creationDate=Created
+confluencepro.referencefixer.livedata.doc.date=Updated
 </content>
 </xwikidoc>

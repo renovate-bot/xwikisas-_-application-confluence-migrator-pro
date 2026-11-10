@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU Lesser General Public
  * License along with this software; if not, write to the Free
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
- * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+ * 02110-1301 USA, or see the FSF site: https://www.fsf.org.
 -->
 
 <xwikidoc version="1.5" reference="ConfluenceMigratorPro.ConfluenceBatches.Code.Translations" locale="ro">
@@ -36,8 +36,9 @@
   <minorEdit>false</minorEdit>
   <syntaxId>plain/1.0</syntaxId>
   <hidden>true</hidden>
-  <content>## Missing: ConfluenceMigratorPro.ConfluenceBatches.referencefixing.livetable.doc.name=Name
-### Missing: ConfluenceMigratorPro.ConfluenceBatches.referencefixing.livetable.batch=Lot
+  <content>### Missing: ConfluenceMigratorPro.ConfluenceBatches.referencefixing.livetable.doc.name=
+## Missing: ConfluenceMigratorPro.ConfluenceBatches.referencefixing.livetable.doc.name=Name
+### Missing: ConfluenceMigratorPro.ConfluenceBatches.referencefixing.livetable.batch=Batch
 ### Missing: ConfluenceMigratorPro.ConfluenceBatches.referencefixing.livetable.executed=Executed
 ### Missing: ConfluenceMigratorPro.ConfluenceBatches.referencefixing.livetable.doc.date=Date
 
@@ -73,7 +74,7 @@
 ### Missing: confluencemigratorpro.batches.create.warn.missingParameters=Some parameters are missing.
 ### Missing: confluencemigratorpro.batches.create.filesThatCouldBeCreated=WILL CREATE THE FOLLOWING MIGRATION PAGES:
 ### Missing: confluencemigratorpro.batches.create.batchPage=BATCH PAGE
-### Missing: confluencemigratorpro.batches.createForm.linkMapping.hint=Perform a link mapping pass for all imports before actually importing the content.
+### Missing: confluencemigratorpro.batches.createForm.linkMapping.hint=Perform a link mapping pass for all imports before actually importing the content (this doesn't work on Oracle databases).
 ### Missing: confluencemigratorpro.batches.createForm.linkMapping.title=Link Mapping Pass
 ### Missing: confluencemigratorpro.batches.createForm.dryRun.hint=Don't actually create the batch and run the migrations, but say what will be done.
 ### Missing: confluencemigratorpro.batches.createForm.dryRun.title=Dry run
