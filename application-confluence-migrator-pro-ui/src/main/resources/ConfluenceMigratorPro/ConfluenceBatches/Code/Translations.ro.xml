@@ -1,0 +1,102 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.5" reference="ConfluenceMigratorPro.ConfluenceBatches.Code.Translations" locale="ro">
+  <web>ConfluenceMigratorPro.ConfluenceBatches.Code</web>
+  <name>Translations</name>
+  <language>ro</language>
+  <defaultLanguage>en</defaultLanguage>
+  <translation>1</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <parent>ConfluenceMigratorPro.ConfluenceBatches.Code.WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <version>1.1</version>
+  <title>Translations</title>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>plain/1.0</syntaxId>
+  <hidden>true</hidden>
+  <content>## Missing: ConfluenceMigratorPro.ConfluenceBatches.referencefixing.livetable.doc.name=Name
+### Missing: ConfluenceMigratorPro.ConfluenceBatches.referencefixing.livetable.batch=Lot
+### Missing: ConfluenceMigratorPro.ConfluenceBatches.referencefixing.livetable.executed=Executed
+### Missing: ConfluenceMigratorPro.ConfluenceBatches.referencefixing.livetable.doc.date=Date
+
+## Main batch livedata
+### Missing: confluencemigratorpro.batches.header.pageName=Name
+### Missing: confluencemigratorpro.batches.header.totalSize=Batch Size
+### Missing: confluencemigratorpro.batches.header.creationDate=Date
+### Missing: confluencemigratorpro.batches.header.author=Created by
+### Missing: confluencemigratorpro.batches.header.actions=Actions
+### Missing: confluencemigratorpro.baches.uploadButton=New batch
+### Missing: confluencemigratorpro.baches.copyButton=Copy batch
+
+## Batch livedata
+### Missing: confluencepro.migration.batch.livetable.header.doc.name=Name
+### Missing: confluencepro.migration.batch.livetable.header.job_status=Status
+### Missing: confluencepro.migration.batch.livetable.header.executed=Executed
+### Missing: confluencepro.migration.batch.livetable.header.doc.date=Date
+### Missing: confluencepro.migration.batch.livetable.header.doc.author=Author
+### Missing: confluencepro.migration.batch.livetable.header.actions=Actions
+
+## Create batch
+### Missing: confluencemigratorpro.batches.createForm.selectAll=Select all
+### Missing: confluencemigratorpro.batches.createForm.selectNone=Unselect All
+### Missing: confluencemigratorpro.batches.createForm.invertSelect=Inverse selection
+### Missing: confluencemigratorpro.batches.createForm.filterPlaceholder=Filter...
+### Missing: confluencemigratorpro.batches.create.batchName=BATCH NAME
+### Missing: confluencemigratorpro.batches.create.sources=SOURCES
+### Missing: confluencemigratorpro.batches.create.inputProperties=INPUT PROPERTIES
+### Missing: confluencemigratorpro.batches.create.outputProperties=OUTPUT PROPERTIES
+### Missing: confluencemigratorpro.batches.create.linkMappingPass=LINK MAPPING PASS
+### Missing: confluencemigratorpro.batches.create.dryRun=DRY RUN
+### Missing: confluencemigratorpro.batches.create.button.title=New batch
+### Missing: confluencemigratorpro.batches.create.warn.missingParameters=Some parameters are missing.
+### Missing: confluencemigratorpro.batches.create.filesThatCouldBeCreated=WILL CREATE THE FOLLOWING MIGRATION PAGES:
+### Missing: confluencemigratorpro.batches.create.batchPage=BATCH PAGE
+### Missing: confluencemigratorpro.batches.createForm.linkMapping.hint=Perform a link mapping pass for all imports before actually importing the content.
+### Missing: confluencemigratorpro.batches.createForm.linkMapping.title=Link Mapping Pass
+### Missing: confluencemigratorpro.batches.createForm.dryRun.hint=Don't actually create the batch and run the migrations, but say what will be done.
+### Missing: confluencemigratorpro.batches.createForm.dryRun.title=Dry run
+### Missing: confluencemigratorpro.batches.create.invalidPathHint=The path that you provided is either not a directory or is invalid. The current server path is
+### Missing: confluencemigratorpro.batches.create.confirmButton=Confirm
+
+## Batch section
+### Missing: confluencepro.howToMigrate.batch.title=Create or copy batches to import multiple Confluence exports
+### Missing: confluencemigratorpro.baches.section.hint=Alternatively, select from below a batch to copy and start from it. All its migrations will be copied and you will be able to review and tweak them, and then run the batch.
+
+## Batch sheet
+### Missing: confluencemigratorpro.batches.batch.refreshLivedata.hint=The status of the job in the above table is not refreshed automatically, and you have to trigger it manually
+### Missing: confluencemigratorpro.batches.batch.refreshLivedata.button=Refresh
+### Missing: confluencemigratorpro.batches.batchSheet.stats=Stats
+### Missing: confluencemigratorpro.batches.batchSheet.fixReferences=Fix references
+### Missing: confluencemigratorpro.batches.batchSheet.copyBatch=Copy batch
+### Missing: confluencemigratorpro.batches.batchSheet.runBatch=Run batch
+### Missing: confluencemigratorpro.batches.batchSheet.resumeBatch=Resume batch
+
+## Batch fix references
+### Missing: confluencebatches.referencefixing.livetable.doc.name=Name
+### Missing: confluencebatches.referencefixing.livetable.batch=Batch
+### Missing: confluencebatches.referencefixing.livetable.executed=Executed
+### Missing: confluencebatches.referencefixing.livetable.doc.date=Date
+</content>
+</xwikidoc>
