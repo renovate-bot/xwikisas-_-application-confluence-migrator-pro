@@ -38,7 +38,7 @@
   <hidden>true</hidden>
   <content>### Missing: confluencepro.referencefixer.livedata.emptyvalue=
 confluencepro.referencefixer.livedata.dryRun=Trockenlauf
-### Missing: confluencepro.referencefixer.livedata.updateInPlace=
+### Missing: confluencepro.referencefixer.livedata.updateInPlace=Update in place
 ### Missing: confluencepro.referencefixer.livedata.migrations=Migrations
 ### Missing: confluencepro.referencefixer.livedata.spaces=Spaces
 ### Missing: confluencepro.referencefixer.livedata.executed=Execution status
