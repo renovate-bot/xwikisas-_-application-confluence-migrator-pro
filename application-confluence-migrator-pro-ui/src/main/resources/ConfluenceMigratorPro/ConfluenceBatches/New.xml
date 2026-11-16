@@ -73,7 +73,7 @@
 #if (!$files)
   #set ($absPath = $services.confluenceBatches.getServerAbsolutePath())
   {{warning}}
-    $services.rendering.escape($services.localization.render("confluencemigratorpro.batches.create.invalidPathHint", $xwiki.currentContentSyntaxId)): $absPath
+    $services.rendering.escape($services.localization.render("confluencemigratorpro.batches.create.invalidPathHint"), $xwiki.currentContentSyntaxId): $absPath
   {{/warning}}
 #end
 
