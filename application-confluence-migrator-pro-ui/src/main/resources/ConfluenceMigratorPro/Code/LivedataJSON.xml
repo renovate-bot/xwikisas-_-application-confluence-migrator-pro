@@ -67,7 +67,11 @@
 #if($xcontext.action == 'get' &amp;&amp; "$!{request.outputSyntax}" == 'plain')
   $response.setContentType('application/json')
   #set($map = {})
-  #gridresult_buildJSON_custom("$!request.classname" $request.collist.split(',') $map)
+  #set ($collist = "$!request.collist")
+  #if (!$collist.startsWith("executed,") &amp;&amp; !$collist.endsWith(",executed") &amp;&amp; !$collist.contains(",executed,"))
+    #set ($collist = $collist + ",executed")
+  #end
+  #gridresult_buildJSON_custom("$!request.classname" $collist.split(',') $map)
   ## Add the status of the executed/executing job.
   #macro (migrationStatus $icon $message)
     &lt;div class="migrationState"&gt;
@@ -83,6 +87,7 @@
       #set ($discard = $row.put('executed', "-"))
     #end
     #if ($row.get('executed_value') == '0')
+      #set ($discard = $row.put('interruptible', true))
       #if ("$!jobState" == '' || $jobState == 'NONE')
         #set ($discard = $row.put('job_status', "#migrationStatus($services.icon.renderHTML('cross'), $services.localization.render('confluencepro.migration.livetable.state.none'))"))
       #elseif ($jobState == 'WAITING')
@@ -94,19 +99,25 @@
         #set ($discard = $row.put('job_status', "#migrationStatus($services.icon.renderHTML('check'), $services.localization.render('confluencepro.migration.livetable.state.done'))"))
       #end
     #elseif ($row.get('executed_value') == '1')
+      #set ($discard = $row.put('interruptible', false))
       #set ($discard = $row.put('job_status', "#migrationStatus($services.icon.renderHTML('check'), $services.localization.render('confluencepro.migration.livetable.state.done'))"))
     #elseif ($row.get('executed_value') == '2')
       #if ($objecttool.isNull($jobState))
+        #set ($discard = $row.put('interruptible', false))
         #set ($discard = $row.put('job_status', "#migrationStatus($services.icon.renderHTML('cross'), $services.localization.render('confluencepro.migration.livetable.state.died'))"))
       #elseif ($jobState == 'NONE')
+        #set ($discard = $row.put('interruptible', true))
         #set ($discard = $row.put('job_status', "#migrationStatus($services.icon.renderHTML('warning'), $services.localization.render('confluencepro.migration.livetable.state.waiting'))"))
       #else
+        #set ($discard = $row.put('interruptible', true))
         #set ($icon = "&lt;div class='loading'&gt;&lt;/div&gt;")
         #set ($discard = $row.put('job_status', "#migrationStatus($icon, $services.localization.render('confluencepro.migration.livetable.state.running'))"))
       #end
     #elseif ($row.get('executed_value') == '3')
+      #set ($discard = $row.put('interruptible', false))
       #set ($discard = $row.put('job_status', "#migrationStatus($services.icon.renderHTML('stop'), $services.localization.render('confluencepro.migration.livetable.state.canceled'))"))
     #elseif ($row.get('executed_value') == '4')
+      #set ($discard = $row.put('interruptible', false))
       #set ($discard = $row.put('job_status', "#migrationStatus($services.icon.renderHTML('cross'), $services.localization.render('confluencepro.migration.livetable.state.errored'))"))
     #end
   #end

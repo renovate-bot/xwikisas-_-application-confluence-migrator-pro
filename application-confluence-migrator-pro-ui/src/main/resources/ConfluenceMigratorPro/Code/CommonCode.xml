@@ -75,7 +75,7 @@
   id='confluenceMigrations'
   source='liveTable'
   sourceParameters="resultPage=ConfluenceMigratorPro.Code.LivedataJSON&amp;className=ConfluenceMigratorPro.Code.MigrationClass&amp;translationPrefix=confluencepro.migration.livetable."
-  properties="doc.title,job_status,executed,doc.date,doc.author,actions"
+  properties="doc.title,job_status,doc.date,doc.author,actions"
   sort='doc.date:desc'}}{
   "meta": {
     "propertyDescriptors": [
@@ -87,6 +87,7 @@
         "id": "interrupt",
         "name": "$services.localization.render('confluencepro.job.interrupt.button')",
         "urlProperty": "doc.url",
+        "allowProperty": "interruptible",
         "icon": "stop"
       },
       {"id": "rights", "allowProperty": false},

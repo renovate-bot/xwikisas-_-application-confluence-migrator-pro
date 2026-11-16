@@ -131,6 +131,7 @@
 ### Missing: confluencepro.migration.nopropertiestomigrate=No properties to migrate.
 ### Missing: confluencepro.migration.livetable.doc.title=Migration
 ### Missing: confluencepro.migration.livetable._actions=Actions
+### Missing: confluencepro.migration.livetable.actions=Actions
 ### Missing: confluencepro.migration.livetable._actions.select=Select package
 ### Missing: confluencepro.migration.livetable.job_status=Migration status
 ### Missing: confluencepro.migration.livetable.executed=Is executed?

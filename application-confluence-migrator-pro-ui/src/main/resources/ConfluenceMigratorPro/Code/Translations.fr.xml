@@ -131,6 +131,7 @@ confluencepro.migration.propertiessuccessfullymigrated=Migrer les propriétés e
 confluencepro.migration.nopropertiestomigrate=Aucune propriété à migrer.
 confluencepro.migration.livetable.doc.title=Migration
 confluencepro.migration.livetable._actions=Actions
+confluencepro.migration.livetable.actions=Actions
 confluencepro.migration.livetable._actions.select=Sélectionner le paquet
 confluencepro.migration.livetable.job_status=État de la migration
 confluencepro.migration.livetable.executed=S’est exécuté ?

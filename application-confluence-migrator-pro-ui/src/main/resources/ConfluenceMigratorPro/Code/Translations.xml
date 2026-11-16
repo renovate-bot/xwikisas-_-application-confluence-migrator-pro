@@ -131,6 +131,7 @@ confluencepro.migration.propertiessuccessfullymigrated=Migrated properties to at
 confluencepro.migration.nopropertiestomigrate=No properties to migrate.
 confluencepro.migration.livetable.doc.title=Migration
 confluencepro.migration.livetable._actions=Actions
+confluencepro.migration.livetable.actions=Actions
 confluencepro.migration.livetable._actions.select=Select package
 confluencepro.migration.livetable.job_status=Migration status
 confluencepro.migration.livetable.executed=Is executed?
