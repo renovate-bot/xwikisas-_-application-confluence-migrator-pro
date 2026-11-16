@@ -134,7 +134,6 @@ confluencepro.migration.livetable._actions=Actions
 confluencepro.migration.livetable.actions=Actions
 confluencepro.migration.livetable._actions.select=Sélectionner le paquet
 confluencepro.migration.livetable.job_status=État de la migration
-confluencepro.migration.livetable.executed=S’est exécuté ?
 confluencepro.migration.livetable.doc.date=Date
 confluencepro.migration.livetable.doc.author=Créateur
 confluencepro.migration.livetable.state.running=En cours

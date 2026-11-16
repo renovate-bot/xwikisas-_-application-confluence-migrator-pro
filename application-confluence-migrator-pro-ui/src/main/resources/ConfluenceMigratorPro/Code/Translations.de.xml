@@ -134,7 +134,6 @@
 ### Missing: confluencepro.migration.livetable.actions=Actions
 ### Missing: confluencepro.migration.livetable._actions.select=Select package
 ### Missing: confluencepro.migration.livetable.job_status=Migration status
-### Missing: confluencepro.migration.livetable.executed=Is executed?
 ### Missing: confluencepro.migration.livetable.doc.date=Date
 ### Missing: confluencepro.migration.livetable.doc.author=Creator
 ### Missing: confluencepro.migration.livetable.state.running=Running
