@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU Lesser General Public
  * License along with this software; if not, write to the Free
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
- * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+ * 02110-1301 USA, or see the FSF site: https://www.fsf.org.
 -->
 
 <xwikidoc version="1.5" reference="ConfluenceMigratorPro.ReferenceFixer.Code.Translations" locale="fr">
@@ -36,7 +36,7 @@
   <minorEdit>false</minorEdit>
   <syntaxId>plain/1.0</syntaxId>
   <hidden>true</hidden>
-  <content>### Missing: confluencepro.referencefixer.livedata.emptyvalue=
+  <content>confluencepro.referencefixer.livedata.emptyvalue= 
 confluencepro.referencefixer.livedata.dryRun=Exécution à blanc
 confluencepro.referencefixer.livedata.updateInPlace=Changé sur place
 confluencepro.referencefixer.livedata.migrations=Migrations
@@ -45,5 +45,12 @@ confluencepro.referencefixer.livedata.executed=État de l'exécution
 confluencepro.referencefixer.livedata.doc.name=Nom
 confluencepro.referencefixer.livedata.doc.creationDate=Créé
 confluencepro.referencefixer.livedata.doc.date=Changé
+confluencepro.referencefixer.create=Créer une session de correction des références
+confluencepro.referencefixer.hasnotrunyet=Cette session de correction des références n'a pas encore été exécutée.
+confluencepro.referencefixer.failed=Cette session de correction des références a échoué.
+confluencepro.referencefixer.running=Cette session de correction des références est en cours.
+confluencepro.referencefixer.done=Cette session de correction des références est terminée.
+confluencepro.referencefixer.successfulconvs=Conversions des références réussies :
+confluencepro.referencefixer.failedconvs=Conversion de références en échec :
 </content>
 </xwikidoc>
