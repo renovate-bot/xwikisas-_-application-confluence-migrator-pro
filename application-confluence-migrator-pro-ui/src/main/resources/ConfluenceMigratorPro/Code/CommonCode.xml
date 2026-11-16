@@ -201,23 +201,6 @@
       &lt;input id="actionsToCheckboxes" type="text" class="cfm-output-filter-property" value="$prefilledValues['output'].getOrDefault('actionsToCheckboxes', 'false')" data-key="actionsToCheckboxes"/&gt;
     &lt;/dd&gt;
   &lt;/dl&gt;
-  &lt;h3&gt;$escapetool.xml($services.localization.render('confluencepro.job.linkmapping.title'))&lt;/h3&gt;
-  &lt;dl&gt;
-    &lt;dt&gt;
-      &lt;label for="saveLinkMapping"&gt;$escapetool.xml($services.localization.render('confluencepro.job.savelinkmapping.question.title'))&lt;/label&gt;
-      &lt;span class="xHint"&gt;$escapetool.xml($services.localization.render('confluencepro.job.savelinkmapping.question.hint'))&lt;/span&gt;
-    &lt;/dt&gt;
-    &lt;dd&gt;
-      &lt;input id="saveLinkMapping" type="text" class="cfm-output-filter-property" value="$prefilledValues['output'].getOrDefault('saveLinkMapping', 'false')" data-key="saveLinkMapping"/&gt;
-    &lt;/dd&gt;
-    &lt;dt&gt;
-      &lt;label for="onlyLinkMapping"&gt;$escapetool.xml($services.localization.render('confluencepro.job.onlylinkmapping.question.title'))&lt;/label&gt;
-      &lt;span class="xHint"&gt;$escapetool.xml($services.localization.render('confluencepro.job.onlylinkmapping.question.hint'))&lt;/span&gt;
-    &lt;/dt&gt;
-    &lt;dd&gt;
-      &lt;input id="onlyLinkMapping" type="text" class="cfm-output-filter-property" value="$prefilledValues['output'].getOrDefault('onlyLinkMapping', 'false')" data-key="onlyLinkMapping"/&gt;
-    &lt;/dd&gt;
-  &lt;/dl&gt;
   &lt;div style="display: none"&gt;
     ## See https://github.com/xwikisas/application-confluence-migrator-pro/issues/83
     &lt;div class="box warningmessage"&gt;

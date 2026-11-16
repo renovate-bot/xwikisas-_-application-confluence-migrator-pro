@@ -178,12 +178,6 @@
 ### Missing: confluencepro.job.onlyrights.question.title=Only import rights
 ### Missing: confluencepro.job.onlyattachments.question.hint=If you have already migrated your content and wish to import attachments (and attachment history) without modifying the content, you can do so setting this option to "true". Existing attachments won't be replaced. Note: make sure to import history if you want to import the attachment history.
 ### Missing: confluencepro.job.onlyattachments.question.title=Only import attachments
-### Missing: confluencepro.job.linkmapping.title=Link Mapping
-### Missing: confluencepro.job.linkmapping.description=Link Mapping lets the migrator collect information about spaces and documents as Confluence packages are analysed in order to produce the right links when pages link to other pages that are not in the same Confluence export package (for instance when using space exports). This doesn't work on Oracle database.
-### Missing: confluencepro.job.savelinkmapping.question.title=Update link mapping
-### Missing: confluencepro.job.savelinkmapping.question.hint=Save information about documents in this package so links to these documents in migrations will work. This includes documents that are not in the spaces selected for import. You can disable this behavior by setting this to false.
-### Missing: confluencepro.job.onlylinkmapping.question.title=Only build link mapping
-### Missing: confluencepro.job.onlylinkmapping.question.hint=Set this to true if this migration should exclusively be used for building link mapping. No spaces will be imported.
 ### Missing: confluencepro.job.emptyActionsToCheckboxes.question.title=Migrate empty action items to checkboxes
 ### Missing: confluencepro.job.emptyActionsToCheckboxes.question.hint=This will migrate all empty tasks (ac:task-body&lt;/ac:task-body) to checkboxes. This will mean that if an action item has no description, even if it has an assignee or due date, it will be migrated to a checkbox.
 ### Missing: confluencepro.job.actionsToCheckboxes.question.title=Migrate all action items to checkboxes

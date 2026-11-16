@@ -67,14 +67,11 @@
 ### Missing: confluencemigratorpro.batches.create.sources=SOURCES
 ### Missing: confluencemigratorpro.batches.create.inputProperties=INPUT PROPERTIES
 ### Missing: confluencemigratorpro.batches.create.outputProperties=OUTPUT PROPERTIES
-### Missing: confluencemigratorpro.batches.create.linkMappingPass=LINK MAPPING PASS
 ### Missing: confluencemigratorpro.batches.create.dryRun=DRY RUN
 ### Missing: confluencemigratorpro.batches.create.button.title=New batch
 ### Missing: confluencemigratorpro.batches.create.warn.missingParameters=Some parameters are missing.
 ### Missing: confluencemigratorpro.batches.create.filesThatCouldBeCreated=WILL CREATE THE FOLLOWING MIGRATION PAGES:
 ### Missing: confluencemigratorpro.batches.create.batchPage=BATCH PAGE
-### Missing: confluencemigratorpro.batches.createForm.linkMapping.hint=Perform a link mapping pass for all imports before actually importing the content.
-### Missing: confluencemigratorpro.batches.createForm.linkMapping.title=Link Mapping Pass
 ### Missing: confluencemigratorpro.batches.createForm.dryRun.hint=Don't actually create the batch and run the migrations, but say what will be done.
 ### Missing: confluencemigratorpro.batches.createForm.dryRun.title=Dry run
 ### Missing: confluencemigratorpro.batches.create.invalidPathHint=The path that you provided is either not a directory or is invalid. The current server path is

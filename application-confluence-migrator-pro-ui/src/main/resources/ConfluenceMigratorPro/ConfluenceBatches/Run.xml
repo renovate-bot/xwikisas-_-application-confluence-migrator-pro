@@ -55,55 +55,6 @@
 
   Running Batch [[$batchDoc]].
 
-  #if ($request.linkmapping)
-    #set ($lmMigrations = [])
-    #foreach ($migration in $migrations)
-      #set ($migrationDoc = $xwiki.getDocument($migration))
-      #set ($migrationDocRef = $migrationDoc.getDocumentReference())
-      #set ($migrationDocRefStr = $services.model.serialize($migrationDocRef))
-      #set ($migrationName = $migrationDocRef.getName())
-      #set ($lmMigrationName = $migrationName.replace("__CONTENT__", "__LM__"))
-      #if ($lmMigrationName == $migrationName)
-        * {{warning}}Link mapping phase for $migrationName skipped: it doesn't have a name in the expected format (it does not contain {{code language=none}}__CONTENT__{{/code}}){{/warning}}
-      #else
-        #set ($lmMigrationDocRef = $services.model.createDocumentReference($lmMigrationName, $migrationDocRef.getParent()))
-        #set ($lmMigrationDocRefStr = $services.model.serialize($lmMigrationDocRef))
-        #set ($outputProperties = $jsontool.fromString($migrationDoc.getValue("outputProperties")))
-        #if (!$outputProperties)
-          #set ($outputProperties = {})
-        #end
-        #set ($discard = $outputProperties.put("onlyLinkMapping", "true"))
-        #set ($discard = $outputProperties.put("saveLinkMapping", "true"))
-        #set ($outputPropertiesJSON = $jsontool.serialize($outputProperties))
-        #if ($request.confirm == "1")
-          #set ($discard = $xwiki.copyDocument($migrationDocRefStr, $lmMigrationDocRefStr))
-          #set ($lmMigrationDoc = $xwiki.getDocument($lmMigrationDocRef))
-          #set ($discard = $lmMigrationDoc.set("outputProperties", $outputPropertiesJSON))
-          #set ($discard = $lmMigrationDoc.set("executed", 0))
-          #set ($discard = $lmMigrationDoc.set("spaces", []))
-          #set ($d = $lmMigrationDoc.getDocument())
-          #foreach ($attachment in $d.getAttachmentList())
-            #set ($discard = $d.removeAttachment($attachment))
-          #end
-          #set ($discard = $lmMigrationDoc.save("Set link mapping output properties"))
-          #batchRunMigration($lmMigrationDoc)
-          #set ($discard = $lmMigrations.add($lmMigrationDocRefStr))
-        #else
-          * Would copy migration $migrationDocRef to $lmMigrationDocRefStr with output properties adapted to make a link mapping phase, {{code language=none}}$outputPropertiesJSON{{/code}}, and run it.
-        #end
-      #end
-    #end
-    #if ($request.confirm == "1")
-      #set ($discard = $batchDoc.set('lmMigrations', $lmMigrations))
-      #set ($discard = $batchDoc.save("Ran the migrations with the link mapping phase enabled"))
-    #end
-  #else
-
-    {{info}}
-    Link mapping phase is disabled
-    {{/info}}
-
-  #end
   #foreach ($migration in $migrations)
     #set ($migrationDoc = $xwiki.getDocument($migration))
     #if ($request.confirm == "1")
@@ -127,15 +78,6 @@
     &lt;/dt&gt;
     &lt;dd&gt;
       #displaySelectBatches('name')
-    &lt;/dd&gt;
-    &lt;dt&gt;
-      &lt;label for="linkmapping"&gt;Link mapping phase&lt;/label&gt;
-      &lt;span class="xHint"&gt;
-        Create and run link mapping migrations before the actual migrations. Disabling this is not recommanded. If you enabled Link Mapping at batch creation time, doubly so because link mapping wouldn't be saved at all.
-      &lt;/span&gt;
-    &lt;/dt&gt;
-    &lt;dd&gt;
-      &lt;p&gt;&lt;input type="checkbox" id="linkmapping" name="linkmapping" checked="checked"/&gt;&lt;/p&gt;
     &lt;/dd&gt;
   &lt;/dl&gt;
   &lt;p&gt;

@@ -79,7 +79,6 @@ public class ConfluenceMigrationScriptService implements ScriptService
      * @since 1.19.0
      */
     public static final Map<String, String> PREFILLED_OUTPUT_PARAMETERS = Map.of(
-        "saveLinkMapping", TRUE,
         "versionPreserved", TRUE,
         "stoppedWhenSaveFail", FALSE
     );

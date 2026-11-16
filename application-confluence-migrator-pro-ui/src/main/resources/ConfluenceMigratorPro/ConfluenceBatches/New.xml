@@ -96,15 +96,7 @@
     &lt;/dt&gt;
     &lt;dd&gt;&lt;input required="required" type="text" name="batchName" id="batchName"
         value="$!escapetool.xml($request.batchName)" /&gt;&lt;/dd&gt;
-    &lt;dt&gt;
-      &lt;label for="linkMappingPass"&gt;$escapetool.xml($services.localization.render('confluencemigratorpro.batches.createForm.linkMapping.title'))&lt;/label&gt;
     &lt;/dt&gt;
-    &lt;dd class="checkbox-input-span"&gt;
-      &lt;input class="cmpInputAccentBlue" type="checkbox" name="linkMappingPass" id="linkMappingPass" checked="checked" /&gt;
-      &lt;span class="xHint"&gt;
-        $escapetool.xml($services.localization.render('confluencemigratorpro.batches.createForm.linkMapping.hint'))
-      &lt;/span&gt;
-    &lt;/dd&gt;
   &lt;/dl&gt;
 
   &lt;div class="cfm-batches-create-button-containers"&gt;

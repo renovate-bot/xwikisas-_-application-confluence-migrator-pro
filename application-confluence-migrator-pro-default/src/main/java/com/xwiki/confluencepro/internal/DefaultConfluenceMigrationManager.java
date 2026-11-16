@@ -74,8 +74,6 @@ import com.xwiki.confluencepro.MigrationExtraDetails;
 import org.xwiki.query.QueryException;
 import org.xwiki.query.QueryManager;
 
-import static com.xwiki.confluencepro.internal.ConfluenceFilteringListener.ONLY_LINK_MAPPING;
-import static com.xwiki.confluencepro.internal.ConfluenceFilteringListener.isTrue;
 import static com.xwiki.confluencepro.script.ConfluenceMigrationScriptService.PREFILLED_INPUT_PARAMETERS;
 import static com.xwiki.confluencepro.script.ConfluenceMigrationScriptService.PREFILLED_OUTPUT_PARAMETERS;
 import static org.xwiki.query.Query.HQL;
@@ -171,17 +169,15 @@ public class DefaultConfluenceMigrationManager implements ConfluenceMigrationMan
             completeExtraDetails(object, context);
             String root = updateMigrationPropertiesAndGetRoot(object);
             Map<String, Map<String, Integer>> macroPages = analyseLogs(jobStatus, object, document, root);
-            if (!isTrue(jobStatus.getRequest().getOutputProperties().getOrDefault(ONLY_LINK_MAPPING, "0").toString())) {
-                Map<String, Integer> macroCounts = new HashMap<>();
-                for (Map<String, Integer> entries : macroPages.values()) {
-                    for (Map.Entry<String, Integer> entry : entries.entrySet()) {
-                        String macroName = entry.getKey();
-                        macroCounts.put(macroName, entry.getValue() + macroCounts.computeIfAbsent(macroName, k -> 0));
-                    }
+            Map<String, Integer> macroCounts = new HashMap<>();
+            for (Map<String, Integer> entries : macroPages.values()) {
+                for (Map.Entry<String, Integer> entry : entries.entrySet()) {
+                    String macroName = entry.getKey();
+                    macroCounts.put(macroName, entry.getValue() + macroCounts.computeIfAbsent(macroName, k -> 0));
                 }
-                object.setLargeStringValue("macros", new ObjectMapper().writeValueAsString(macroCounts));
-                persistMacroMap(macroPages);
             }
+            object.setLargeStringValue("macros", new ObjectMapper().writeValueAsString(macroCounts));
+            persistMacroMap(macroPages);
 
             if (StringUtils.isEmpty(document.getTitle())) {
                 document.setTitle(statusDocumentReference.getName());

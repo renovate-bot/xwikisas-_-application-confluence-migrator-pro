@@ -37,7 +37,6 @@ import com.xwiki.confluencepro.ConfluenceMigrationJobStatus;
 import com.xwiki.pro.internal.resolvers.LinkMappingStore;
 
 import org.apache.commons.configuration2.ex.ConfigurationException;
-import org.hibernate.Session;
 import org.slf4j.Marker;
 import org.slf4j.MarkerFactory;
 import org.xwiki.component.annotation.Component;
@@ -70,8 +69,6 @@ import org.xwiki.refactoring.job.question.EntitySelection;
 public class ConfluenceFilteringListener extends AbstractEventListener
 {
     static final Marker COLLISION_MARKER = MarkerFactory.getMarker("collidingReferences");
-
-    static final String ONLY_LINK_MAPPING = "onlyLinkMapping";
 
     @Inject
     private JobContext jobContext;
@@ -113,32 +110,20 @@ public class ConfluenceFilteringListener extends AbstractEventListener
         ConfluenceFilteringEvent ev = (ConfluenceFilteringEvent) event;
         setSpaces(confluencePackage, status, ev, job);
 
-        LinkMappingStore lms = linkMappingStore.isSupported() ? linkMappingStore : null;
-
         if (status.isCanceled()) {
             ev.cancel();
-        } else if (isOutputPropertyEnabled(status, ONLY_LINK_MAPPING)) {
-            // This is a link mapping only phase, let's store the link mapping and cancel the import
-            updateLinkMappingAndLookForCollisions(lms);
-            ev.cancel();
-        } else if (isInputPropertyEnabled(status, "storeConfluenceDetailsEnabled")) {
-            // This is the happy path / normal situation.
-            // The data on the imported spaces should be in the wiki. Except if someone has imported a partial space and
-            // also disabled storeConfluenceDetailsEnabled on the previous import, which is not supported nor likely.
-            // We clean up the link mapping which may have been imported in a link-mapping only phase, we don't want
-            // this data hanging around for nothing.
-            if (lms != null) {
-                lms.removeSpaces(status.getSpaces());
-            }
-            updateLinkMappingAndLookForCollisions(null);
-        } else if (isOutputPropertyEnabled(status, "saveLinkMapping")) {
-            // We are asked to save the link mapping and storeConfluenceDetailsEnabled is disabled, let's store the
-            // link mapping
-            if (lms != null) {
-                updateLinkMappingAndLookForCollisions(lms);
-            }
         } else {
-            updateLinkMappingAndLookForCollisions(null);
+            if (isInputPropertyEnabled(status, "storeConfluenceDetailsEnabled") && linkMappingStore.isSupported()) {
+                // This is the happy path / normal situation.
+                // The data about  the imported spaces should be in the wiki (except if someone has imported a partial
+                // space and also disabled storeConfluenceDetailsEnabled on the previous import, which is not supported
+                // nor likely).
+                // We clean up the link mapping which may have been imported in a link-mapping only phase (with a
+                // previous version of the migrator that was capable of doing so, but we removed this feature): we don't
+                // want this data hanging around for no reason.
+                linkMappingStore.removeSpaces(status.getSpaces());
+            }
+            lookForCollisions();
         }
 
         try {
@@ -176,9 +161,7 @@ public class ConfluenceFilteringListener extends AbstractEventListener
             return false;
         }
 
-        if (isOutputPropertyEnabled(status, "skipQuestions")
-            || isOutputPropertyEnabled(status, ONLY_LINK_MAPPING))
-        {
+        if (isOutputPropertyEnabled(status, "skipQuestions")) {
             return false;
         }
 
@@ -250,13 +233,9 @@ public class ConfluenceFilteringListener extends AbstractEventListener
         return null;
     }
 
-    private void updateLinkMappingAndLookForCollisions(LinkMappingStore store)
+    private void lookForCollisions()
     {
-        if (store == null) {
-            logger.info("Looking for collisions…");
-        } else {
-            logger.info("Computing the link mapping and looking for collisions…");
-        }
+        logger.info("Looking for collisions…");
 
         AtomicReference<String> currentSpace = new AtomicReference<>();
 
@@ -264,8 +243,7 @@ public class ConfluenceFilteringListener extends AbstractEventListener
         Set<String> collidingReferences = new HashSet<>();
         Map<String, String> spaceByRef = new HashMap<>();
 
-        Session session = store == null ? null : store.beginTransaction();
-        ConfluenceLinkMappingReceiver mapper = new MyConfluenceLinkMappingReceiver(store, currentSpace, session,
+        ConfluenceLinkMappingReceiver mapper = new MyConfluenceLinkMappingReceiver(currentSpace,
             reverseMapping, collidingReferences, spaceByRef);
         linkMapper.getLinkMapping(mapper);
         for (String collidingReference : collidingReferences) {
@@ -274,55 +252,36 @@ public class ConfluenceFilteringListener extends AbstractEventListener
             logger.error(COLLISION_MARKER, "Reference [{}] collides in space [{}] for pages [{}]",
                 collidingReference, spaceKey, pageTitles);
         }
-        if (session != null) {
-            store.endTransaction(true);
-        }
     }
 
     private final class MyConfluenceLinkMappingReceiver implements ConfluenceLinkMappingReceiver
     {
         private final AtomicReference<String> currentSpace;
-        private final Session session;
         private final Map<String, List<String>> reverseMapping;
         private final Set<String> collidingReferences;
         private final Map<String, String> spaceByRef;
-        private final LinkMappingStore store;
 
-        private MyConfluenceLinkMappingReceiver(LinkMappingStore store, AtomicReference<String> currentSpace,
-            Session session,
+        private MyConfluenceLinkMappingReceiver(AtomicReference<String> currentSpace,
             Map<String, List<String>> reverseMapping, Set<String> collidingReferences,
             Map<String, String> spaceByRef)
         {
             this.currentSpace = currentSpace;
-            this.session = session;
             this.reverseMapping = reverseMapping;
             this.collidingReferences = collidingReferences;
             this.spaceByRef = spaceByRef;
-            this.store = store;
         }
 
         @Override
         public void addPage(String spaceKey, long pageId, EntityReference reference)
         {
-            if (!spaceKey.equals(currentSpace.get())) {
-                currentSpace.set(spaceKey);
-            }
-            String serialized = serializer.serialize(reference);
-            if (store != null && session != null) {
-                store.add(session, pageId, serialized);
-            }
+            updateCurrentSpace(spaceKey);
         }
 
         @Override
         public void addPage(String spaceKey, String pageTitle, EntityReference reference)
         {
-            if (!spaceKey.equals(currentSpace.get())) {
-                currentSpace.set(spaceKey);
-            }
+            updateCurrentSpace(spaceKey);
             String serialized = serializer.serialize(reference);
-            if (store != null && session != null) {
-                store.add(session, spaceKey, pageTitle, serialized);
-            }
 
             // for collision checking
             List<String> list = reverseMapping.get(serialized);
@@ -334,6 +293,13 @@ public class ConfluenceFilteringListener extends AbstractEventListener
                 spaceByRef.put(serialized, spaceKey);
             }
             list.add(pageTitle);
+        }
+
+        private void updateCurrentSpace(String spaceKey)
+        {
+            if (!spaceKey.equals(currentSpace.get())) {
+                currentSpace.set(spaceKey);
+            }
         }
     }
 }

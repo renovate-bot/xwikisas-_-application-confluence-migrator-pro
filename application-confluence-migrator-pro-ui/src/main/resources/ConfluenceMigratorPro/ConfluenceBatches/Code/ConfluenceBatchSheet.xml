@@ -55,8 +55,10 @@
 ; Migrations
 : $doc.display("migrations")
 
+#if (!$doc.getValue("lmMigrations").isEmpty())
 ; Link Mapping Migrations
 : $doc.display("lmMigrations")
+#end
 
 {{liveData 
   id="confluenceMigrations"

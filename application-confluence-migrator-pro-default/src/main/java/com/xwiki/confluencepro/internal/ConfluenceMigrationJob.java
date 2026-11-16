@@ -152,8 +152,7 @@ public class ConfluenceMigrationJob
         FilterStreamConverterJobRequest filterJobRequest = new FilterStreamConverterJobRequest(
             FilterStreamType.unserialize(CONFLUENCE_XML_ROLEHINT), inputProperties,
             FilterStreamType.unserialize(outputStreamRoleHint), outputProperties);
-        boolean interactive = !isGeneralParameterEnabled("skipQuestions")
-            && !isGeneralParameterEnabled("onlyLinkMapping");
+        boolean interactive = !isGeneralParameterEnabled("skipQuestions");
         filterJobRequest.setInteractive(interactive);
         request.setInteractive(interactive);
         progressManager.pushLevelProgress(1, this);

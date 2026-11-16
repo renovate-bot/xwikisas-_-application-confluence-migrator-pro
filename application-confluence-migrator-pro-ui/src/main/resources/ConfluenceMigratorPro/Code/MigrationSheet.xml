@@ -245,6 +245,9 @@
   #end
 
   #set ($outputProperties = $jsontool.fromString($obj.getProperty('outputProperties').value))
+  ## The migrator used to have a "only link mapping feature", which would save Confluence reference related information
+  ## without importing anything. We removed that feature, but of course we still need to display the relatede migration
+  ## report correctly so we still check for this
   #if ("$!outputProperties.get('onlyLinkMapping')" == "true")
 
     {{info}}

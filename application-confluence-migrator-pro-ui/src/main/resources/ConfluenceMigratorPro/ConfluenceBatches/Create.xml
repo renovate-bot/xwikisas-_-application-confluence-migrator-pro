@@ -50,7 +50,6 @@
 #if ($outputProperties &amp;&amp; $outputProperties.length != 0)
   #set ($outputProperties = $outputProperties[0])
 #end
-#set ($linkMappingPass = $request.linkMappingPass &amp;&amp; $request.linkMappingPass != "off" &amp;&amp; $request.linkMappingPass != "0")
 #if($batchName &amp;&amp; $sources &amp;&amp; $sources.size() &amp;&amp; $inputProperties &amp;&amp; $outputProperties)
   #set ($extraParams = {})
   #set ($logs =  $services.confluenceBatches.createBatch($batchName, $sources, $inputProperties, $outputProperties, $extraParams))
@@ -112,7 +111,6 @@
   &lt;span&gt;&lt;br/&lt;/span&gt;
   #renderJson('confluencemigratorpro.batches.create.inputProperties', $services.confluenceBatches.resolveJson($!inputProperties), true)
   #renderJson('confluencemigratorpro.batches.create.outputProperties', $services.confluenceBatches.resolveJson($!outputProperties), true)
-  #renderProperty('confluencemigratorpro.batches.create.linkMappingPass', "$!linkMappingPass")
 
   #set ($batchPage = "[[$!logs.get('batchPage')[0]]]")
   #renderProperty('confluencemigratorpro.batches.create.batchPage', $batchPage)

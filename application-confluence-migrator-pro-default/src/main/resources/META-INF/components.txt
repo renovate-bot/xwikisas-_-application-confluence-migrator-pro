@@ -10,5 +10,4 @@ com.xwiki.confluencepro.internal.DiagramConversionJob
 com.xwiki.confluencepro.internal.DiagramConverter
 com.xwiki.confluencepro.internal.DocumentFilterOverrideListener
 com.xwiki.confluencepro.internal.ExtraImportTools
-com.xwiki.confluencepro.internal.LinkMappingConverter
 com.xwiki.confluencepro.script.ConfluenceDiagramConverterScriptService

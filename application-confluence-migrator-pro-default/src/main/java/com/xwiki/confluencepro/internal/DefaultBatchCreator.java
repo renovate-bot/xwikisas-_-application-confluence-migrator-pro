@@ -92,7 +92,6 @@ public class DefaultBatchCreator extends AbstractBatchCreator
 
         ObjectNode ownInputProperties = (ObjectNode) OBJECT_MAPPER.readTree(inputProperties);
         ObjectNode ownOutputProperties = (ObjectNode) OBJECT_MAPPER.readTree(outputProperties);
-        prepareOutputProprties(ownOutputProperties);
 
         processSources(batchName, sources, ownInputProperties, ownOutputProperties, messageList, migrationDocs);
 
@@ -152,17 +151,6 @@ public class DefaultBatchCreator extends AbstractBatchCreator
             .collect(Collectors.toList()));
         document.save();
         return List.of(serializer.serialize(batchReference));
-    }
-
-    /**
-     * Add the link mapping settings to the outputProperties.
-     *
-     * @param outputProperties
-     */
-    private void prepareOutputProprties(ObjectNode outputProperties)
-    {
-        outputProperties.put("onlyLinkMapping", FALSE);
-        outputProperties.put("saveLinkMapping", FALSE);
     }
 
     /**
