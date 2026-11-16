@@ -200,7 +200,7 @@ $xwiki.ssfx.use('uicomponents/widgets/upload.css', true)
     </property>
     <property>
       <code>window.addEventListener("DOMContentLoaded", () =&gt; {
-  require(['jquery'].concat(XWiki.FileUploader ? [] : ['xwiki-upload']), ($, FileUploader) =&gt; {
+  require(['jquery'], $ =&gt; {
     const fileInput = document.getElementById("confluenceMetadataUploadFile");
     if (fileInput.observe) {
       fileInput.observe('xwiki:html5upload:fileFinished', () =&gt; {
@@ -208,8 +208,7 @@ $xwiki.ssfx.use('uicomponents/widgets/upload.css', true)
       });
     }
 
-    const uploader = FileUploader || XWiki.FileUploader;
-    new uploader(fileInput, {
+    new XWiki.FileUploader(fileInput, {
       autoUpload: true,
       progressAutohide: true,
       responseContainer: document.createElement("div")
