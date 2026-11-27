@@ -36,7 +36,7 @@
   <minorEdit>false</minorEdit>
   <syntaxId>plain/1.0</syntaxId>
   <hidden>true</hidden>
-  <content>### Missing: confluencepro.referencefixer.livedata.emptyvalue=
+  <content>confluencepro.referencefixer.livedata.emptyvalue= 
 confluencepro.referencefixer.livedata.dryRun=Exécution à blanc
 ### Missing: confluencepro.referencefixer.livedata.updateInPlace=Update in place
 ### Missing: confluencepro.referencefixer.livedata.migrations=Migrations
