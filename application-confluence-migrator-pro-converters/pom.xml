@@ -32,7 +32,7 @@
   <properties>
     <xwiki.extension.namespaces>{root}</xwiki.extension.namespaces>
     <xwiki.jacoco.instructionRatio>0.89</xwiki.jacoco.instructionRatio>
-    <taskapplication.version>3.11.4</taskapplication.version><!-- Please clean up dependencyManagement as soon as you bump this version-->
+    <taskapplication.version>3.12.1</taskapplication.version><!-- Please clean up dependencyManagement as soon as you bump this version-->
   </properties>
   <dependencies>
     <dependency>
